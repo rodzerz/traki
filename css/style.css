@@ -1,0 +1,13 @@
+header{
+    border-bottom: 1px solid;
+}
+
+header ul{
+    display:flex;
+    gap:20px;
+}
+
+header ul li{
+    list-style-type:none;
+    padding: 7px 10px;
+}

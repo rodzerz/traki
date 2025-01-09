@@ -1,22 +1,21 @@
 <?php
 
-class Database {
+class Database{
 
     public $pdo;
-
-    // Konstrktors un destruktors
-    public function __construct($config) {
-        // Data Source Name
-        $dsn = "mysql:" . http_build_query($config, "", ";");
-        // PHP Data Object
+    
+    public function __construct($config){
+        $dsn = "mysql:" . http_build_query($config, "", ";" );
         $this->pdo = new PDO($dsn);
-        $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        $this->pdo->setAttribute(19,2);
     }
 
-    // Uztaisīt metodi query
-    public function query($sql,$params) {
+    public function query($sql, $params){
+        // 1. sagatavot vaicajumu (statement)
         $statement = $this->pdo->prepare($sql);
+        // 2. Izpildit statement
         $statement->execute($params);
+        // 3. dabut rezultatu
         return $statement;
     }
 }

@@ -1,21 +1,18 @@
--- 1. Uztaisīt datubāzi
-CREATE DATABASE blog_ipa23;
+CREATE DATABASE blog;
 
--- 2. Izmantot šo datu bāzi
-USE blog_ipa23;
+USE blog;
 
--- 3. Uztaisīt tabulu
 CREATE TABLE posts (
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	content VARCHAR(1000)
+id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+content VARCHAR(5200)
+
 );
 
--- 4. Ievietot datus
 INSERT INTO posts
 (content)
 VALUES
-("Pirmais bloga ieraksts"),
-("Otrais bloga ieraksts");
+("pirmais ieraksts"),
+("otrais ieraksts");
 
 SELECT * FROM posts;
 
