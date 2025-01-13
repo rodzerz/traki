@@ -1,16 +1,15 @@
-<?php dd($_SERVER["REQUEST_URI"]) ;
+<?php 
+
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
 if($uri == "/"){
-    require "controllers/index.php";
-} else if ($uri == "about"){
-    require "controllers/story.php";
-} else if ($uri == "categories"){
-    require "controllers/categories.php";
+   require "controllers/index.php";
+} else if ($uri == "/about"){
+ require "controllers/story.php";
+} else  {
+    http_response_code(404);
+    echo "<p>Lapa netika atrasta</p>";
+    die();
 } ?>
 
-<?php if ( http_response_code(404)){ ?>
-    <p>Atvainojiet, lapa netika atrasta!</p>
-    die();
-<?php } ?>
 
