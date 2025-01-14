@@ -1,7 +1,7 @@
 <?php require "components/header.php"?>
-
+<?php require "components/footer.php"?>
 <?php require "components/navbar.php"?>
-
+<link rel ="stylesheet" href="css/style.css">
 <h1>blog</H1>
 
 <form >
@@ -19,9 +19,7 @@
      <li> <?=  $posts["content"] ?> </li>
  <?php } ?>
 </ul>
-<?php require "components/footer.php"?>
 
 
-
-
-
+</body>
+</html>
