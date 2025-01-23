@@ -1,16 +1,26 @@
 <?php
-
-if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER['REQUEST_METHOD'] === "POST") {
-    // Sagatavojam SQL vaicājumu
-    $sql = "INSERT INTO posts (content) VALUES (:content)";
-
-    
+require "Validator.php";
 
 
-   $params = ["content" => $_POST["content"]];
-  $db->query($sql,$params);
-   header("Location: /");
-    exit();
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $errors = [];
+    if (!Validator::string($_POST["content"],  max: 50)){
+        $errors["content"] = "Saturam jābūt ievadītam, bet ne garakam par 50 rakstzimem";
+    }
+
+    if (empty($errors)){
+       $sql = "INSERT INTO posts (content)
+                VALUES
+                (:content)";
+ $params = ["content" => $_POST["content"]];
+ $db->query($sql,$params);
+  header("Location: /");
+   exit();
+        
+    }
+
+
+  
    
 }
 
