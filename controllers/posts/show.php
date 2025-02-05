@@ -1,6 +1,10 @@
 <?php
 if (!isset($GET["id"]) || $_GET["id"] != ""){
-   redirectIfNotFound();
+    function redirectIfNotFound() {
+        header("Location: /404.php");
+        exit();
+    }
+    
 }
 $sql = "SELECT * FROM posts WHERE id = :id";
 $params = ["id" => $_GET["id"]];

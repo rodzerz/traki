@@ -14,12 +14,11 @@
        <p> Nekas netika atrasts</p>
  <?php } ?>
 
-<ul>
- <?php foreach ($posts as $posts){  ?>
-     <li> <?=  $posts["content"] ?> </li>
- <?php } ?>
+
+ <ul>
+    <?php foreach($posts as $post){ ?>
+        <li><a href="show?id=<?= $post["id"] ?>"> <?= htmlspecialchars($post["content"]) ?></a> </li>
+    <?php } ?>
 </ul>
-
-
 </body>
 </html>
