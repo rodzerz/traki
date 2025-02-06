@@ -10,7 +10,7 @@ class Database{
         $this->pdo->setAttribute(19,2);
     }
 
-    public function query($sql, $params){
+    public  function query($sql, $params){
         // 1. sagatavot vaicajumu (statement)
         $statement = $this->pdo->prepare($sql);
         // 2. Izpildit statement

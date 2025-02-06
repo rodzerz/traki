@@ -7,3 +7,9 @@
 
 
 <?php require "views/components/footer.php" ?>
+
+
+<form action="/delete" method="POST">
+    <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
+    <button type="submit" onclick="return confirm('Vai tiešām vēlaties dzēst šo ierakstu?');">Dzēst</button>
+</form>
