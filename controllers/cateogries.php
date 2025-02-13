@@ -13,6 +13,6 @@ echo "</form>";
 
 echo "<ul>";
 foreach($posts as $post){
-echo "<li>" . $post["content"] . "</li>";
+echo "<li>" . $post["namee"] . "</li>";
 }
 echo "</ul>";

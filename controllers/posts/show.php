@@ -6,7 +6,7 @@ if (!isset($GET["id"]) || $_GET["id"] != ""){
     }
     
 }
-$sql = "SELECT * FROM posts WHERE id = :id";
+$sql = "SELECT * FROM fruits WHERE id = :id";
 $params = ["id" => $_GET["id"]];
 $post = $db->query($sql, $params)->fetch();
 

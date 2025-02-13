@@ -1,18 +1,18 @@
-CREATE DATABASE blog;
+CREATE DATABASE fruits;
 
-USE blog;
+USE fruits;
 
-CREATE TABLE posts (
+CREATE TABLE fruits (
 id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-content VARCHAR(5200)
+namee VARCHAR(40)
 
 );
 
-INSERT INTO posts
-(content)
+INSERT INTO fruits
+(fruits)
 VALUES
-("pirmais ieraksts"),
-("otrais ieraksts");
+("abols"),
+("apelsins");
 
-SELECT * FROM posts;
+SELECT * FROM fruits;
 
